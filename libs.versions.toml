@@ -1,0 +1,25 @@
+package fullsend;
+
+import fullsend.modules.SoundEsp;
+import meteordevelopment.meteorclient.addons.MeteorAddon;
+import meteordevelopment.meteorclient.systems.modules.Category;
+import meteordevelopment.meteorclient.systems.modules.Modules;
+
+public class FullSendAddon extends MeteorAddon {
+    public static final Category CATEGORY = new Category("FullSend");
+
+    @Override
+    public void onInitialize() {
+        Modules.get().add(new SoundEsp());
+    }
+
+    @Override
+    public void onRegisterCategories() {
+        Modules.registerCategory(CATEGORY);
+    }
+
+    @Override
+    public String getPackage() {
+        return "fullsend";
+    }
+}
